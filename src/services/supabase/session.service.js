@@ -1,10 +1,12 @@
 import { supabase } from '../../lib/supabase'
+import { nanoid } from 'nanoid'
 
 export const sessionService = {
   async create() {
+    const sessionId = nanoid(6) // Generate a short unique ID with 10 characters
     const { data, error } = await supabase
       .from('sessions')
-      .insert({ created_at: new Date().toISOString() })
+      .insert({ id: sessionId, created_at: new Date().toISOString() })
       .select()
       .single()
 
