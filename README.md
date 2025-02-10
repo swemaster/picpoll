@@ -15,7 +15,7 @@ npm run dev
 To create a Docker image, use the following command:
 
 ```bash
-docker build -t picpoll .
+sudo docker build -t picpoll .
 ```
 
 ### Running the Docker Image
@@ -23,7 +23,7 @@ docker build -t picpoll .
 To run the Docker image, use the following command:
 
 ```bash
-docker run -p 3000:3000 picpoll
+sudo docker run -p 3000:3000 picpoll
 ```
 
 ### Pushing to Docker Hub
@@ -46,4 +46,22 @@ sudo docker login
 
 ```bash
 sudo docker push swemaster/picpoll:latest
+```
+
+**Log in to Docker Hub on your droplet**:
+
+```bash
+docker login
+```
+
+**Pull the Docker image from Docker Hub**:
+
+```bash
+docker pull swemaster/picpoll:latest
+```
+
+**Run the Docker image**:
+
+```bash
+docker run -d -p 3000:3000 swemaster/picpoll:latest
 ```

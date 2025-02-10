@@ -63,12 +63,32 @@ function Results() {
   }
 
   const copyShareUrl = () => {
-    navigator.clipboard.writeText(shareUrl)
-      .then(() => {
+    if (navigator.clipboard && window.isSecureContext) {
+      // navigator.clipboard API is available and secure context
+      navigator.clipboard.writeText(shareUrl)
+        .then(() => {
+          setCopySuccess(true)
+          setTimeout(() => setCopySuccess(false), 3000)
+        })
+        .catch(err => console.error('Failed to copy:', err))
+    } else {
+      // Fallback method for older browsers or non-secure context
+      const textArea = document.createElement("textarea")
+      textArea.value = shareUrl
+      textArea.style.position = "fixed"  // Avoid scrolling to bottom
+      textArea.style.opacity = "0"  // Hide the textarea
+      document.body.appendChild(textArea)
+      textArea.focus()
+      textArea.select()
+      try {
+        document.execCommand('copy')
         setCopySuccess(true)
         setTimeout(() => setCopySuccess(false), 3000)
-      })
-      .catch(err => console.error('Failed to copy:', err))
+      } catch (err) {
+        console.error('Fallback: Oops, unable to copy', err)
+      }
+      document.body.removeChild(textArea)
+    }
   }
 
   if (loading) return <div className="loading">Loading results...</div>
