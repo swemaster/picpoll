@@ -32,18 +32,18 @@ To push the Docker image to Docker Hub, follow these steps:
 
 1. Tag the image with your Docker Hub username and repository name:
 
-    ```bash
-    docker tag picpoll yourusername/picpoll
-    ```
+```bash
+sudo docker tag picpoll swemaster/picpoll:latest
+```
 
 2. Log in to Docker Hub:
 
-    ```bash
-    docker login
-    ```
+```bash
+sudo docker login
+```
 
 3. Push the image to Docker Hub:
 
-    ```bash
-    docker push yourusername/picpoll
-    ```
+```bash
+sudo docker push swemaster/picpoll:latest
+```
