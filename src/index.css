@@ -122,7 +122,11 @@
 /* Voting page styles */
 .vote-container {
   min-height: 100vh;
-  background: linear-gradient(to bottom, #fd267a, #ff7854);
+  /*
+  tinder background
+  background: linear-gradient(to bottom, #070000, #4d4c4b);
+  */
+  background: linear-gradient(to bottom, #d73c78, #ff7854);
   display: flex;
   flex-direction: column;
   align-items: center;

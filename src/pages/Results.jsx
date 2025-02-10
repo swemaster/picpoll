@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 import { sessionService } from '../services/supabase/session.service'
 import { voteService } from '../services/supabase/vote.service'
 import '../index.css'
 
 function Results() {
   const { sessionId } = useParams()
+  const navigate = useNavigate()
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [results, setResults] = useState(null)
@@ -97,8 +98,9 @@ function Results() {
   return (
     <div className="results-page common-styles">
       <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-      <h1>Tournament Results</h1>
+        <h1>Tournament Results</h1>
       </Link>
+
       <div className="share-section">
         <p>Share this link to get more votes:</p>
         <div className="share-url">
