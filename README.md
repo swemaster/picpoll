@@ -1,8 +1,49 @@
-# React + Vite
+# PicPoll
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Getting Started
 
-Currently, two official plugins are available:
+### Running the Development Server
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To start the development server, run the following command:
+
+```bash
+npm run dev
+```
+
+### Creating a Docker Image
+
+To create a Docker image, use the following command:
+
+```bash
+docker build -t picpoll .
+```
+
+### Running the Docker Image
+
+To run the Docker image, use the following command:
+
+```bash
+docker run -p 3000:3000 picpoll
+```
+
+### Pushing to Docker Hub
+
+To push the Docker image to Docker Hub, follow these steps:
+
+1. Tag the image with your Docker Hub username and repository name:
+
+    ```bash
+    docker tag picpoll yourusername/picpoll
+    ```
+
+2. Log in to Docker Hub:
+
+    ```bash
+    docker login
+    ```
+
+3. Push the image to Docker Hub:
+
+    ```bash
+    docker push yourusername/picpoll
+    ```
