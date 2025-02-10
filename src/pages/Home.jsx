@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { ImageDropzone } from '../components/ImageDropzone/ImageDropzone'
 import { useImageUpload } from '../hooks/useImageUpload'
 
@@ -18,8 +18,10 @@ function Home() {
 
   return (
     <div className="upload-page common-styles">
-      <h1>Image Tournament</h1>
-      <p>Upload images to create a ranking tournament</p>
+      <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+        <h1>Pic Poll</h1>
+      </Link>
+      <p>Upload images to create an image ranking tournament</p>
 
       <div className="upload-container">
         <ImageDropzone

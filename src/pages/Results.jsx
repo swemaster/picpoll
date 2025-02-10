@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { sessionService } from '../services/supabase/session.service'
 import { voteService } from '../services/supabase/vote.service'
 import '../index.css'
@@ -96,8 +96,9 @@ function Results() {
 
   return (
     <div className="results-page common-styles">
+      <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
       <h1>Tournament Results</h1>
-
+      </Link>
       <div className="share-section">
         <p>Share this link to get more votes:</p>
         <div className="share-url">
