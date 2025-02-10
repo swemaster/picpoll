@@ -166,12 +166,17 @@
 
 .vote-instructions {
   margin-top: 20px;
-  color: rgb(0, 0, 0); /* Set the text color to white */
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 29px;
+  font-size: 36px;
   text-align: center;
   padding: 10px; /* Add padding for better spacing */
   border-radius: 8px; /* Add border-radius for rounded corners */
+}
+
+.vote-instructions p {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold; /* Makes the text bold */
+  font-style: italic; /* Makes the text italic */
 }
 
 .loader {

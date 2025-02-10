@@ -37,14 +37,10 @@ function Vote() {
 
   return (
     <div className="vote-container">
-      <div className="progress-bar">
-        <div
-          className="progress-fill"
-          style={{ width: `${(progress.current / progress.total) * 100}%` }}
-        />
-      </div>
       <div className="vote-instructions">
-        <p>Click on your preferred image!</p>
+        <p>
+          Click on your preferred image to vote!
+        </p>
       </div>
 
       <div className="cards-container">
@@ -65,7 +61,7 @@ function Vote() {
             <div className="card-label">Option 1</div>
           </motion.div>
 
-          <div className="vs">VS</div>
+          <div className="vs vote-instructions"><p>VS</p></div>
 
           <motion.div
             className="card"
@@ -82,6 +78,14 @@ function Vote() {
             />
             <div className="card-label">Option 2</div>
           </motion.div>
+        </div>
+      </div>
+
+      <div className="progress-bar">
+        <div
+          className="progress-fill"
+          style={{ width: `${(progress.current / progress.total) * 100}%` }}
+        >
         </div>
       </div>
     </div>

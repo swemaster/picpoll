@@ -32,8 +32,12 @@ export function useImageUpload() {
   }
 
   const uploadImages = async () => {
-    if (images.length < 2) {
-      throw new Error('Please select at least 2 images')
+    // Remove duplicate images based on file name
+    const uniqueImages = Array.from(new Set(images.map(image => image.file.name)))
+      .map(name => images.find(image => image.file.name === name))
+
+    if (uniqueImages.length < 2) {
+      throw new Error('Please select at least 2 unique images')
     }
 
     setUploading(true)
@@ -43,7 +47,7 @@ export function useImageUpload() {
 
       // Compress and upload images
       const uploads = await Promise.all(
-        images.map(async (image, index) => {
+        uniqueImages.map(async (image, index) => {
           const compressedFile = await compressImage(image.file)
           return storageService.uploadImage(session.id, compressedFile, index)
         })
