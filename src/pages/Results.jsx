@@ -75,7 +75,7 @@ function Results() {
   if (error) return <div className="error">{error}</div>
 
   return (
-    <div className="results-page">
+    <div className="results-page common-styles">
       <h1>Tournament Results</h1>
 
       <div className="share-section">

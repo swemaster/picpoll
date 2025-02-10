@@ -19,7 +19,7 @@ export function useImageUpload() {
   const compressImage = async (imageFile) => {
     const options = {
       maxSizeMB: 1,
-      maxWidthOrHeight: 1920,
+      maxWidthOrHeight: 6tig 00,
       useWebWorker: true
     }
     try {

@@ -17,23 +17,25 @@ function Home() {
   }
 
   return (
-    <div className="upload-page">
+    <div className="upload-page common-styles">
       <h1>Image Tournament</h1>
       <p>Upload images to create a ranking tournament</p>
 
-      <ImageDropzone
-        images={images}
-        onAddImages={addImages}
-        onRemoveImage={removeImage}
-      />
+      <div className="upload-container">
+        <ImageDropzone
+          images={images}
+          onAddImages={addImages}
+          onRemoveImage={removeImage}
+        />
 
-      <button
-        className="upload-btn"
-        onClick={handleUpload}
-        disabled={images.length < 2 || uploading}
-      >
-        {uploading ? 'Creating tournament...' : 'Start Tournament'}
-      </button>
+        <button
+          className="upload-btn"
+          onClick={handleUpload}
+          disabled={images.length < 2 || uploading}
+        >
+          {uploading ? 'Creating tournament...' : 'Start Tournament'}
+        </button>
+      </div>
     </div>
   )
 }
